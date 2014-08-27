@@ -1,0 +1,25 @@
+{
+  "name": "interpose",
+  "version": "0.0.0",
+  "description": "Interpose a stream between two tokens",
+  "main": "interpose.js",
+  "scripts": {
+    "test": "./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sonewman/interpose.git"
+  },
+  "author": "Sam Newman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sonewman/interpose/issues"
+  },
+  "homepage": "https://github.com/sonewman/interpose",
+  "devDependencies": {
+    "macchiato": "^1.0.0"
+  },
+  "dependencies": {
+    "readable-stream": "1.1.13"
+  }
+}
