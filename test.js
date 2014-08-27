@@ -91,6 +91,28 @@ desc('Interpose!', function () {
       .pipe(new Interpose(start, end))
       .pipe(t.writable)
   })
+  
+  desc.it('Should take options', function (t) {
+    var start = 'more than just '
+    var end = ' for testing'
+    var expected = start + t.data + end
+    var options = { start: start, end: end }
+    var buf = ''
+    var i = 0
+
+    t.setup(function (chunk) {
+      buf += chunk
+
+      if (++i === 2) {
+        t.equals(buf, expected)
+        t.end()
+      }
+    })
+
+    t.readable
+      .pipe(new Interpose(options))
+      .pipe(t.writable)
+  })
 
   desc.it('Should work when supplied buffers', function (t) {
     var start = 'more than just '
